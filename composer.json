@@ -1,0 +1,16 @@
+{
+    "name": "rdisme/xyaccount",
+    "description": "xyaccount",
+    "authors": [
+        {
+            "name": "rdisme",
+            "email": "rendao.sun@foxmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Rdisme\\Xyaccount\\": "src/"
+        }
+    },
+    "license": "MIT"
+}
