@@ -51,7 +51,7 @@ class OauthCheck
      */
     public function send($oauth_type = 1)
     {
-        $target_url = $this->oauth_url . '&target=' . urlencode($this->_get_target()) . '&type=' . $oauth_type;
+        $target_url = $this->oauth_url . '&target=' . urlencode($this->_get_target()) . '&type=' . $oauth_type . '&_F=' . $this->_get_from();
         header('location:' . $target_url);
         die;
     }
@@ -65,10 +65,23 @@ class OauthCheck
     }
 
 
+    // set from type
+    public function set_from($from)
+    {
+        $this->from = $from;
+        return $this;
+    }
+
+
     // return target url
     private function _get_target()
     {
         return $this->target_url;
+    }
+
+    private function _get_from()
+    {
+        return $this->from;
     }
 
     /**
